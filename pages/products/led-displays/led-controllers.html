@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Controllers - Innovative Vision</title>
+    <meta name="description" content="Advanced LED controllers for precise display management. High-performance controllers with comprehensive control features for professional LED displays.">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .product-hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-bg);
+            overflow: hidden;
+            margin-bottom: var(--custom-padding-y);
+        }
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://placehold.co/1920x1080/333333/FFFFFF?text=LED+Controllers') center/cover;
+            z-index: -1;
+        }
+        .product-hero-content {
+            max-width: 800px;
+            padding: 0 var(--spacing-md);
+            animation: fadeIn 1s ease-out;
+        }
+        .product-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--white-bg);
+        }
+        .product-hero p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--white-bg);
+        }
+        .product-features {
+            padding-top: var(--custom-padding-y);
+            padding-bottom: var(--custom-padding-y);
+            background-color: var(--white-bg);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        .feature-card {
+            background-color: var(--light-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.5rem;
+        }
+        .feature-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .product-specs {
+            padding-top: var(--custom-padding-y);
+            padding-bottom: var(--custom-padding-y);
+            background-color: var(--light-bg);
+        }
+        .specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        .spec-item {
+            background-color: var(--white-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .spec-item h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+        .spec-item p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .product-gallery {
+            padding-top: var(--custom-padding-y);
+            padding-bottom: var(--custom-padding-y);
+            background-color: var(--white-bg);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .product-hero {
+                height: 50vh;
+            }
+            .product-hero h1 {
+                font-size: 2.5rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">Innovative Vision</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/pages/about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="/pages/products.html">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/products/led-displays/indoor-led-displays.html">Indoor LED Displays</a></li>
+                        <li><a href="/pages/products/led-displays/outdoor-led-displays.html">Outdoor LED Displays</a></li>
+                        <li><a href="/pages/products/led-displays/creative-led-displays.html">Creative LED Displays</a></li>
+                        <li><a href="/pages/products/led-displays/rental-led-displays.html">Rental LED Displays</a></li>
+                        <li><a href="/pages/products/led-displays/led-modules.html">LED Modules</a></li>
+                        <li><a href="/pages/products/led-displays/led-controllers.html">LED Controllers</a></li>
+                        <li><a href="/pages/products/led-displays/video-wall-controllers.html">Video Wall Controllers</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/solutions.html">Solutions</a></li>
+                <li><a href="/pages/contact.html" class="cta-button">Get a Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="product-hero-content">
+            <h1>LED Controllers</h1>
+            <p>Advanced LED controllers for precise display management. High-performance controllers with comprehensive control features for professional LED displays.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="product-features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-sliders-h"></i>
+                <h3>Precise Control</h3>
+                <p>Fine-tuned control over brightness, color, and display settings.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Network Integration</h3>
+                <p>Seamless integration with existing network infrastructure.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Remote Management</h3>
+                <p>Control and monitor displays from anywhere using mobile devices.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Reliable Performance</h3>
+                <p>Stable and consistent performance for long-term operation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications Section -->
+    <section class="product-specs">
+        <div class="specs-container">
+            <h2>Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Control Interface</h3>
+                    <p>RS485, Ethernet, WiFi</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Power Output</h3>
+                    <p>Up to 500W per controller</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Refresh Rate</h3>
+                    <p>Up to 3840Hz</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Color Depth</h3>
+                    <p>16-bit per color</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Operating Temperature</h3>
+                    <p>-20°C to 60°C</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Power Supply</h3>
+                    <p>AC 100-240V</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="product-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://placehold.co/800x450/333333/FFFFFF?text=LED+Controller+1" alt="LED Controller Front View">
+            </div>
+            <div class="gallery-item">
+                <img src="https://placehold.co/800x450/333333/FFFFFF?text=LED+Controller+2" alt="LED Controller Installation">
+            </div>
+            <div class="gallery-item">
+                <img src="https://placehold.co/800x450/333333/FFFFFF?text=LED+Controller+3" alt="LED Controller Application">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Innovative Vision</h3>
+                <p>Professional digital signage solutions</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                    <li><a href="/pages/products.html">Products</a></li>
+                    <li><a href="/pages/solutions.html">Solutions</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@innovativevision.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Innovative Vision. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html> 

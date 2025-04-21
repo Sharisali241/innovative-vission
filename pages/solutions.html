@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - Innovative Vision</title>
+    <meta name="description" content="Industry-specific display solutions for education, retail, corporate, healthcare, and more. Customized to meet your unique requirements.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .solutions-section {
+            padding: 8rem 0;
+            background-color: var(--light-bg);
+        }
+
+        .solutions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .solutions-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .solutions-header h1 {
+            color: var(--heading-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .solutions-header p {
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+
+        .industry-tabs {
+            margin-bottom: 4rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            border: none;
+            background-color: white;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: var(--light-bg);
+        }
+
+        .tab-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .solution-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-image {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .solution-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .solution-card:hover .solution-image img {
+            transform: scale(1.1);
+        }
+
+        .solution-info {
+            padding: 1.5rem;
+        }
+
+        .solution-info h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .solution-info p {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        .solution-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-button {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .primary-action {
+            background-color: var(--primary-color);
+            color: var(--light-bg);
+        }
+
+        .secondary-action {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary-action:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .secondary-action:hover {
+            background-color: var(--primary-color);
+            color: var(--light-bg);
+        }
+
+        .custom-solution {
+            margin-top: 4rem;
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            padding: 3rem;
+            color: var(--light-bg);
+            text-align: center;
+        }
+
+        .custom-solution h2 {
+            color: var(--light-bg);
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-solution p {
+            color: var(--light-bg);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .custom-solution .cta-button {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+        }
+
+        .custom-solution .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .tab-buttons {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">Innovative Vision</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/pages/about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="/pages/products.html">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/products.html#led-walls">LED Video Walls</a></li>
+                        <li><a href="/pages/products.html#digital-signage">Digital Signage</a></li>
+                        <li><a href="/pages/products.html#interactive">Interactive Displays</a></li>
+                        <li><a href="/pages/products.html#accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/solutions.html">Solutions</a></li>
+                <li><a href="/pages/case-studies.html">Case Studies</a></li>
+                <li><a href="/pages/blog.html">Blog</a></li>
+                <li><a href="/pages/contact.html" class="cta-button">Get a Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Innovative Vision</h1>
+            <p>Tailored display solutions for every industry</p>
+        </div>
+        <img class="hero-image" src="https://placehold.co/1920x1080/333333/FFFFFF?text=Display+Solutions" alt="Display Solutions Hero Image">
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="solutions-container">
+            <div class="solutions-header">
+                <h1>Industry Solutions</h1>
+                <p>Tailored display solutions designed to meet the unique requirements of your industry</p>
+            </div>
+
+            <div class="industry-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="education">Education</button>
+                    <button class="tab-button" data-tab="retail">Retail</button>
+                    <button class="tab-button" data-tab="corporate">Corporate</button>
+                    <button class="tab-button" data-tab="healthcare">Healthcare</button>
+                    <button class="tab-button" data-tab="hospitality">Hospitality</button>
+                </div>
+                <div class="tab-content">
+                    <!-- Education Solutions -->
+                    <div class="tab-pane active" id="education">
+                        <h2>Education Solutions</h2>
+                        <p>Transform learning environments with interactive displays and digital signage that enhance student engagement and collaboration.</p>
+                        <div class="solution-grid">
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Classroom+Display" alt="Classroom Display Solution">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Classroom Displays</h3>
+                                    <p>Interactive displays for modern learning environments</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Multi-touch capabilities</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Screen sharing</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Educational software integration</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Lecture+Hall" alt="Lecture Hall Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Lecture Hall Systems</h3>
+                                    <p>Large-scale displays for auditoriums and lecture halls</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>High brightness</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Wide viewing angles</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Professional audio integration</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Digital+Signage" alt="Campus Digital Signage">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Campus Digital Signage</h3>
+                                    <p>Information displays for campus-wide communication</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Emergency alerts</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Event schedules</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Wayfinding</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Retail Solutions -->
+                    <div class="tab-pane" id="retail">
+                        <h2>Retail Solutions</h2>
+                        <p>Enhance the customer experience and drive sales with engaging digital displays and interactive kiosks.</p>
+                        <div class="solution-grid">
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Store+Display" alt="Retail Store Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Store Displays</h3>
+                                    <p>Engaging displays for retail environments</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Dynamic content</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Remote management</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Analytics integration</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Window+Display" alt="Window Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Window Displays</h3>
+                                    <p>Eye-catching outdoor displays for storefronts</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Weather-resistant</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>High brightness</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Motion sensors</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="https://placehold.co/600x400/333333/FFFFFF?text=Interactive+Kiosk" alt="Interactive Kiosk">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Interactive Kiosks</h3>
+                                    <p>Self-service displays for customer engagement</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Touch-screen interface</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Payment processing</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Inventory integration</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Corporate Solutions -->
+                    <div class="tab-pane" id="corporate">
+                        <h2>Corporate Solutions</h2>
+                        <p>Enhance communication and collaboration in the workplace with professional display systems.</p>
+                        <div class="solution-grid">
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/meeting-room.jpg" alt="Meeting Room Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Meeting Room Displays</h3>
+                                    <p>Facilitate productive meetings with interactive displays for presentations and collaboration.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Wireless screen sharing</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Video conferencing</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Annotation tools</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/lobby-display.jpg" alt="Lobby Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Lobby Displays</h3>
+                                    <p>Create a welcoming environment with digital signage that showcases your company culture.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Visitor information</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Company news</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Employee recognition</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/command-center.jpg" alt="Command Center">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Command Centers</h3>
+                                    <p>Monitor operations with multi-screen displays for data visualization and decision-making.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Video wall technology</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Data integration</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>24/7 operation</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Healthcare Solutions -->
+                    <div class="tab-pane" id="healthcare">
+                        <h2>Healthcare Solutions</h2>
+                        <p>Improve patient care and staff efficiency with specialized displays for healthcare environments.</p>
+                        <div class="solution-grid">
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/medical-display.jpg" alt="Medical Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Medical Displays</h3>
+                                    <p>Ensure accurate diagnosis with high-precision displays for medical imaging.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>DICOM compliance</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Calibration tools</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Anti-glare technology</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/patient-room.jpg" alt="Patient Room Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Patient Room Displays</h3>
+                                    <p>Enhance the patient experience with interactive displays for entertainment and information.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Entertainment options</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Patient education</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Nurse call integration</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/waiting-room.jpg" alt="Waiting Room Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Waiting Room Displays</h3>
+                                    <p>Keep patients informed and engaged with digital signage in waiting areas.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Queue management</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Health information</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Entertainment content</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hospitality Solutions -->
+                    <div class="tab-pane" id="hospitality">
+                        <h2>Hospitality Solutions</h2>
+                        <p>Create memorable guest experiences with immersive display solutions for hotels, restaurants, and entertainment venues.</p>
+                        <div class="solution-grid">
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/hotel-lobby.jpg" alt="Hotel Lobby Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Hotel Lobby Displays</h3>
+                                    <p>Welcome guests with elegant digital signage that showcases amenities and local attractions.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Wayfinding</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Event schedules</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Weather information</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/restaurant-display.jpg" alt="Restaurant Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Restaurant Displays</h3>
+                                    <p>Enhance the dining experience with digital menus and ambient displays.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Digital menus</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Kitchen display systems</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Ambient lighting</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-image">
+                                    <img src="../assets/images/solutions/entertainment.jpg" alt="Entertainment Venue Display">
+                                </div>
+                                <div class="solution-info">
+                                    <h3>Entertainment Venues</h3>
+                                    <p>Create immersive experiences with large-scale displays for theaters, arenas, and event spaces.</p>
+                                    <div class="solution-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>LED video walls</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Scoreboards</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Interactive experiences</span>
+                                        </div>
+                                    </div>
+                                    <div class="solution-actions">
+                                        <a href="/pages/contact.html" class="action-button primary-action">Request Quote</a>
+                                        <a href="#" class="action-button secondary-action">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-solution">
+                <h2>Need a Custom Solution?</h2>
+                <p>Our team of experts can design and implement a tailored display solution that meets your specific requirements and challenges.</p>
+                <a href="/pages/contact.html" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Innovative Vision</h3>
+                <p>Professional display systems and solutions</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                    <li><a href="/pages/products.html">Products</a></li>
+                    <li><a href="/pages/solutions.html">Solutions</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@innovativevision.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Innovative Vision. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Tab switching
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding pane
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 
